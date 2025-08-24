@@ -14,7 +14,8 @@ data class ReleaseResponse(
     val success: Boolean,
     val message: String,
     val version: String?,
-    val pipelineId: String?
+    val pipelineId: String?,
+    val releaseNotes: String? = null
 )
 
 @Serializable

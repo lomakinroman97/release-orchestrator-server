@@ -41,9 +41,10 @@ class ReleaseOrchestratorService {
             
             ReleaseResponse(
                 success = true,
-                message = "Release pipeline completed successfully",
+                message = "Релиз номер $newVersion успешно создан и опубликован в репозитории",
                 version = newVersion,
-                pipelineId = System.currentTimeMillis().toString()
+                pipelineId = System.currentTimeMillis().toString(),
+                releaseNotes = releaseNotes
             )
         } catch (e: Exception) {
             logger.error("Release pipeline failed", e)
