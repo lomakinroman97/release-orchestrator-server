@@ -1,0 +1,13 @@
+services:
+  release-orchestrator:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - JAVA_OPTS=-Xmx512m
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - YANDEX_GPT_API_KEY=${YANDEX_GPT_API_KEY}
+      - YANDEX_GPT_FOLDER_ID=${YANDEX_GPT_FOLDER_ID}
+    volumes:
+      - ./logs:/app/logs
+    restart: unless-stopped
